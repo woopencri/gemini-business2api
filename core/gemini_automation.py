@@ -55,6 +55,8 @@ class GeminiAutomation:
     def _create_page(self) -> ChromiumPage:
         """创建浏览器页面"""
         options = ChromiumOptions()
+        options.set_argument(‘–headless=new’)
+        options.set_argument(‘–disable-gpu’)
         options.set_argument("--incognito")
         options.set_argument("--no-sandbox")
         options.set_argument("--disable-setuid-sandbox")
