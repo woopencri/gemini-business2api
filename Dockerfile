@@ -20,7 +20,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 # 安装 Python 依赖（合并为单一 RUN 指令以减少层数）
 COPY requirements.txt .
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc && \
+    apt-get install -y --no-install-recommends gcc chromium chromium-driver && \
     pip install --no-cache-dir -r requirements.txt && \
     apt-get purge -y gcc && \
     apt-get autoremove -y && \
